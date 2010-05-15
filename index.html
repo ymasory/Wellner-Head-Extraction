@@ -41,13 +41,26 @@
 
     <h2>Overview</h2>
     <p>
-    [coming soon]
+      <a href="http://www.cs.brandeis.edu/~wellner/">Ben Wellner</a>'s 2009 dissertation <u>Sequence Models on Ranking Methods for Discourse Parsing</u> at Brandeis University includes chapters on automatically identifying connectives and arguments in the Penn Discourse Treebank (PDTB). However, unlike in the PDTB representation he is interested in identifying arguments by their <i>heads</i>, as opposed to by their text spans. The purpose of this program is to implement the text span --> syntactic head portion of his algorithm. See pages 40-43 and 60-61 of his dissertation for more information.
+    </p>
+    <h2>Dependencies</h2>
+    <p>
+      The script requires <a href="http://www.nltk.org/">NLTK</a> as a dependency. It is available in Ubuntu as the package <tt>python-nltk</tt>, but NLTK runs on all major platforms. Additionally, you must already have a copy of the PDTB, with the PDTB, PTB, and text portions of the corpus. I cannot distribute it. You can get a copy through your academic instiution or from the <a href="http://www.ldc.upenn.edu/">Linguistics Data Consortium</a>. I assume your corpus directory has three subdirectories. One called <tt>pdtb</tt> containing subdirectories containing .pdtb files, a second called <tt>ptb</tt> containing subdirectories containing .mrg files, and a third called <tt>text</tt> containing subdirectories containing extensionless raw text files.
+    </p>
+    
+    <h2>Usage</h2>
+    <p>
+      Single request mode:
+      <pre>$ python wellner_head_extraction.py [simple_input_file] [output_file]</pre>
+      Efficient batch request mode:
+      <pre>$ python wellner_head_extraction.py -p [batch_input_file] [output_file]</pre>
     </p>
     <p>
-    This work was done during the summer of 2009 while I was an intern of the Department of Computer Science at Penn, working with researchers at the <a href="http://www.ircs.upenn.edu/">Institute for Research in Cognitive Science</a> (IRCS). The researchers at IRCS generously agreed to release the code under an open source license. 
-    </P
-    <h2>Usage</h2>
-    [coming soon]
+      A simple input file contains a path to a PTB .mrg file (absolute or relative to script), followed by a literal tab followed by a list of Gorn addresses. See the provided <a href="http://github.com/ymasory/Wellner-Head-Extraction/blob/master/sample_request.txt"><tt>sample_request.txt</tt></a> for an example. The script will write to the provided output file, whether or not it exists.
+    <p>
+    <p>
+      A batch input file contains a path to a PTB .mrg file (absolute or relative to script), followed by a literal tab followed by a first Gorn address followed by a tab followed by a second Gorn address followed by either the string "arg1" or "arg2". See the provided <a href="http://github.com/ymasory/Wellner-Head-Extraction/blob/master/sample_batch_requests.txt"><tt>sample_batch_requests.txt</tt></a> for an example.
+    </p>
 
     <h2>Download</h2>
     <p>
@@ -60,6 +73,12 @@
       <pre>$ git clone git://github.com/ymasory/Wellner-Head-Extraction.git</pre>
       Alternatively, you can <a href="http://github.com/ymasory/Wellner-Head-Extraction">browse the code</a> through GitHub.
     </p>
+
+    <h2>Special Thanks</h2>
+    <p>
+    This work was done during the summer of 2009 while I was an intern of the Department of Computer Science at Penn, working with researchers at the <a href="http://www.ircs.upenn.edu/">Institute for Research in Cognitive Science</a> (IRCS). The researchers at IRCS generously agreed to release the code under an open source license. 
+    </P
+
 
 
 <h2>Contact</h2>
