@@ -1,0 +1,1 @@
+/home/yuvi/Desktop/corpus/ptb/13/wsj_1373.mrg	13,0;13,2;13,3;13,4;13,5
